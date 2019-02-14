@@ -6,6 +6,7 @@
 
 ## REFERENCES:
 - List any outside resources used
+https://stackoverflow.com/questions/2265967/writing-a-linkedlist-destructor <- used an answer on this page for guidance
 
 ## MISCELLANEOUS COMMENTS:
 - Anything you would like the grader to know
