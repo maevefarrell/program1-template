@@ -8,17 +8,17 @@ Vector::Vector() {
 Vector::~Vector() {
 	for(int i = 0; i < arrSize; i++) {
 		planArr[i] = NULL;
-		delete *(planArr[i]);
+		delete (planArr[i]);
 	}
 
-	planArr = NULL
+	planArr = NULL;
 	delete planArr;
-	
+
 }
 
 void Vector::insert(int index, Planet *p) {
 	arrSize++;
-	planArr = new planArr[arrSize];
+	planArr = new Planet*[arrSize];
 	if(index > arrSize) {
 		planArr[arrSize] = p;
 	}
@@ -37,7 +37,7 @@ Planet* Vector::read(int index) {
 
 	for(int i = 0; i < arrSize; i++) {
 		if(i == index) {
-			return planArr[i]
+			return planArr[i];
 		}
 	}
 }
@@ -45,12 +45,12 @@ Planet* Vector::read(int index) {
 bool Vector::remove(int index) {
 	for(int i = 0; i < arrSize; i++) {
 		if(i == index) {
-			delete *(planArr[i]);
+			delete (planArr[i]);
 			delete planArr;
-		}	
+		}
 	}
 	arrSize--;
-	planArr = new planArr[arrSize];
+	planArr = new Planet*[arrSize];
 }
 
 unsigned Vector::size() {

@@ -6,7 +6,7 @@ class Starlist{
 	private:
 
 	public:
-        List * planets;
+        List* planets;
         Starlist();
 				~Starlist();
         long addPlanet();

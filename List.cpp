@@ -8,7 +8,7 @@ List::List(){
 
 //Destructor
 List::~List(){
-	Node * curr = this.head();
+	Node * curr = this->getHead();
 
 	for(int i=0;i<size();i++){
 		Node * n = curr->next;
@@ -38,8 +38,8 @@ void List::insert(int index, Planet * p){
 		curr->next = NULL;
 		curr->prev = NULL;
 	} else if(index > size()){
-		this.getTail()->next = curr;
-		curr->prev = this.getTail();
+		this->getTail()->next = curr;
+		curr->prev = this->getTail();
 		this->tail = curr;
 		curr->next = NULL;
 
