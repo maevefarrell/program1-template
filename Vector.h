@@ -6,8 +6,9 @@
 class Vector{
 	private:
 		int arrSize;
-		Planet ** planArr;
+
 	public:
+		Planet ** planArr;
 		Vector(); //constructor
 		~Vector(); //destructor
 		void insert(int index, Planet *p); //inserts element at index
