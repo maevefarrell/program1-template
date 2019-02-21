@@ -10,14 +10,14 @@ List::List(){
 //Destructor
 List::~List(){
 	Node * curr = this.head();
-	
+
 	for(int i=0;i<size;i++){
 		Node * n = curr->next;
 		delete curr;
 		curr = n;
 	}
 	this->head = NULL;
-	this->tail = NULL; 
+	this->tail = NULL;
 }
 
 //get head() and tail()
@@ -37,13 +37,13 @@ void List::insert(int index, Planet * p){
 		this->head = curr;
 		this->tail = curr;
 		curr->next = NULL;
-		curr->prev = NULL; 
+		curr->prev = NULL;
 	} else if(index > size){
 		this.tail()->next = curr;
 		curr->prev = this.tail();
 		this->tail = curr;
 		curr->next = NULL;
-		
+
 	} else{
 		Node * n = this.head();
 		for(int i=0;i<index-1;i++){
@@ -66,8 +66,8 @@ Planet * List::read(int index){
 			curr = curr->next;
 		}
 	}
-	return curr->dataPlanet;
-	
+	return curr->planetData;
+
 }
 
 bool List::remove(int index){
@@ -79,4 +79,15 @@ bool List::remove(int index){
 	n->next->prev = n->prev;
 	delete n;
 	this->size--;
+}
+
+unsigned List::size(){
+	unsigned int numElements = 0;
+	Node * curr = head();
+	while(curr->next!=NULL){
+		numElements++;
+		curr = curr->next;
+	}
+	numElements++;
+	return numElements;
 }

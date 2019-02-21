@@ -5,7 +5,7 @@ class Node{
    	private:
 		Node * next;
 		Node * prev;
-		Planet * planetData;	
+		Planet * planetData;
 }
 
 class List{
@@ -21,7 +21,7 @@ class List{
 		void insert(int index, Planet * p);
 		Planet * read(int index);
 		bool remove(int index);
-		unsigned size;
+		unsigned size();
 
 
 }
