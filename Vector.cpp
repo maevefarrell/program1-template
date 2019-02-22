@@ -17,6 +17,11 @@ Vector::~Vector() {
 }
 
 void Vector::insert(int index, Planet *p) {
+	if(index > arrSize) {
+		arrSize = index + 1;
+		printf("%d\n", arrSize);
+		return;
+	}
 	arrSize++;
 	planArr = new Planet*[arrSize];
 	if(index > arrSize) {
